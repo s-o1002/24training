@@ -11,7 +11,7 @@ class TestProblem2(unittest.TestCase):
     def tearDown(self):
         sys.stdout = sys.__stdout__
 
-    def test_problem1_output(self):
+    def test_problem2_output(self):
         problem2.main()
 
         # 期待される出力
