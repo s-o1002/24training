@@ -2,7 +2,14 @@
 FROM python:3.8-slim
 
 #ライブラリのインストール
-RUN pip install --no-cache-dir boto3 moto coverage
+RUN pip install --no-cache-dir boto3 moto coverage pytest
+
+RUN apt-get update && apt-get install -y unzip curl
+
+#AWS CLIのインストール
+RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+RUN unzip awscliv2.zip
+RUN ./aws/install
 
 #作業ディレクトリの作成
 RUN mkdir -p /work
