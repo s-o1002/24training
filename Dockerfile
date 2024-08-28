@@ -16,3 +16,5 @@ WORKDIR /work/python
 COPY py-scripts/ .
 
 COPY tests/ ../tests
+
+COPY aws/ ../aws
